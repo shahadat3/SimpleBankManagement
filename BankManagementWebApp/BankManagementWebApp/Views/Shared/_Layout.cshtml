@@ -1,0 +1,235 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My Bank</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("style", false)
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+               
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Create Account", "Save", "AccountSave")</li>
+                    <li>@Html.ActionLink("Deposit", "Save", "Deposit")</li>
+                    <li>@Html.ActionLink("Withdraw", "Save", "Withdraw")</li>
+                    <li>@Html.ActionLink("Accounts Info", "Search", "AccountSave")</li>
+                    <li>@Html.ActionLink("Search","Info","Info")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("style", false)
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>IIUC Students Panel - Home</title>
+    <link rel="shortcut icon" href="template/images/favicon.png" type="image/x-icon"/>
+    <link rel="icon" href="template/images/favicon.png" type="image/x-icon"/>
+    <link type="text/css" media="all" href="~/Content/style.css" rel="stylesheet" />
+    <link type="text/css" media="all" href="~/Content/style_uwp.css" rel="stylesheet" />
+</head>
+<body class="home blog livecss">
+    <div id="header-panel">
+        <div class="page">
+            <div id="header">
+                <div class="header-top">
+                    <div class="language">
+                        <ul class="lang-list"></ul><!--lang-list end-->
+                    </div><!--language end-->
+                    <div class="loginrss">
+                        <ul class="logrss-list">
+                            <li><a href="http://www.iiuc.ac.bd/">IIUC Home</a></li>
+                        </ul>
+                    </div><!--loginrss end-->
+                    <div class="clear"></div>
+                </div><!--header-top end-->
+                <div class="clear"></div>
+                <div class="header-main">
+                    <a class="logo" href="#"></a>
+                    <div id="ms-bg">
+                        <div id="main-menu">
+                            <div class="menu-header">
+
+                                <ul><li id="menu-item-615" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-615"><a href='#' class="sf-with-ul">Home</a></li><li id="menu-item-615" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-615"><a href='Preregistration.php' class="sf-with-ul">Preregistration</a></li><li id="menu-item-615" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-615"><a href='schedule.php' class="sf-with-ul">Confirm Pre-Registration</a></li><li id="menu-item-615" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-615"><a href='Billing.php' class="sf-with-ul">Billing</a></li><li id="menu-item-615" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-615"><a href='advisingBill.php' class="sf-with-ul">Advising Bill</a></li><li id="menu-item-615" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-615"><a href='Status.php' class="sf-with-ul">Result</a></li><li id="menu-item-615" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-615"><a href='profile.php' class="sf-with-ul">Profile</a></li><li id="menu-item-615" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-615"><a href='terindex.php' class="sf-with-ul">TER Submission</a></li><li id="menu-item-615" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-615"><a href='index.php?logout=1' class="sf-with-ul">Logout</a></li></ul>
+                            </div>
+                        </div><!--main-menu end-->
+                        <div id="search">
+                        </div><!--search end-->
+                        <div class="clear"></div>
+                    </div><!--ms-bg end-->
+                </div><!--header-main end-->
+            </div><!--header end-->
+        </div><!--page end-->
+    </div><!--header-panel-->
+<div class="page">
+    <div class="clear"></div>
+    <div id="Content-fullwidth">
+        <div id="uwp-cleMain">
+            <div id="uwp-user">&nbsp;You are logged in as: <b>C161030</b> (<a href='index.php?logout=1'>log out</a>)
+            </div>
+            <div id="uwp-filter-info">
+                <p class='uwp-student-info-header'>&nbsp;&nbsp;&nbsp; </p>
+                <p class='uwp-student-info'><b>Semester: </b>183 (<i>Autumn 2018</i>) <b>Student: </b>C161030 Shresta Biswas <br/><b>Adviser: </b>Md. Ziaur Rahman
+                </p>
+            </div>
+            <div id="rest">
+                <div class="uwp-prop"></div>
+
+                <div id="msgBar"></div>
+                <div id="cleContent">
+                    <table class="uwp-noborder">
+                        <tr>
+                            <td class="uwp-menu-item"><a href="Billing.php">Billing History</a></td>
+                        </tr>
+                        <tr>
+                            <td class="uwp-menu-item"><a href="Status.php">Current Status</a></td>
+                        </tr>
+                        <tr>
+                            <td class="uwp-menu-item"><a href="Preregistration.php">Preregistration</a></td>
+                        </tr>
+                        <tr>
+                            <td class="uwp-menu-item"><a href="schedule.php">Confirm Pre-Registration</a></td>
+                        </tr>
+                        <tr>
+                            <td class="uwp-menu-item"><a href="studyResult.php">MDP Class Result</a></td>
+                        </tr>
+                        <tr>
+                            <td class="uwp-menu-item"><a href="terindex.php">TER Submission</a></td>
+                        </tr>
+
+                        <tr>
+                            <td class="uwp-menu-item"><a href="profile.php">My Profile</a></td>
+                        </tr>
+
+                        <tr>
+                            <td class="uwp-menu-item"><a href="ChangePassword.php">Change Password</a></td>
+                        </tr>
+                        <tr>
+                            <td class="uwp-menu-item"><a href="notices\autumn-15\Registration-How-to.pdf">Registration-How-To</a></td>
+                        </tr>
+
+                    </table>
+
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <!--content end-->
+    <div id="footer">
+        <div class="box986-top">
+            <div class="box986-bottom">
+                <div class="box986-mid">
+                    <div class="footer-widget-section">
+                        <div class="clear"></div>
+                    </div><!--footer-widget end-->
+                </div><!--box-487-mid end-->
+                <div class="copyright-social">
+                    <div class="copyright">
+                        <p>
+                            Copyright © 2016
+                            <a href="./International Islamic University Chittagong_files/International Islamic University Chittagong.htm">IIUC</a>
+                            | All Rights Reserved
+                        </p>
+                    </div><!--copyright end-->
+                    <div class="counter">
+                        <div class="footer-widget-5">
+                            <div class="textwidget">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social">
+                        <p>
+                            System developed by:
+                            <a href="http://www.vpcsbd.com">ValuePLUS Computer Systems Ltd.</a>
+                        </p>
+                    </div><!--social end-->
+                    <div class="clear"></div>
+                </div><!--copyright-social end-->
+            </div><!--box-487-bottom end-->
+        </div><!--box-487-top end-->
+    </div><!--footer end-->
+    <!--stats_footer_test-->
+</div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+
+</html>*@

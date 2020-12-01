@@ -1,0 +1,111 @@
+﻿@model BankManagementWebApp.Models.Account
+@{
+    ViewBag.Title = "Save";
+ 
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+
+    <style>
+        .field-validation-error {
+            color: red;
+        }
+
+        body {
+            background-color: aquamarine;
+        }
+    </style>
+
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        <table>
+            <tr>
+                <td>
+                    @Html.Label("Name")
+                </td>
+                <td>
+                    @Html.TextBox("Name")
+                    @Html.ValidationMessage("Name")
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.Label("ContactNo")
+                </td>
+                <td>
+                    @Html.TextBox("ContactNo")
+                    @Html.ValidationMessage("ContactNo")
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.Label("Address")
+                </td>
+                <td>
+                    @Html.TextBox("Address")
+                    @Html.ValidationMessage("Address")
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.Label("AcNo")
+                </td>
+                <td>
+                    @Html.TextBox("AcNo")
+                    @Html.ValidationMessage("AcNo")
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.Label("Date")
+                </td>
+                <td>
+                    @Html.TextBox("Date")
+                    @Html.ValidationMessage("Date")
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.Label("Balance")
+                </td>
+                <td>
+                    @Html.TextBox("Balance")
+                    @Html.ValidationMessage("Balance")
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button id="save">Save</button>
+                </td>
+            </tr>
+        </table>
+    }
+    @if (ViewBag.Message != null)
+    {
+        <h3>@ViewBag.Message</h3>
+    }
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+   <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+<script>
+        $(document).ready(function() {
+            var d = new Date();
+            var m = d.getMonth() + 1;
+            var date = d.getDate() + "-" + m + "-" + d.getFullYear();
+            //$("#Date").datepicker({
+            //    dateFormat: 'dd-mm-yy'
+            //});
+            $("#Date").val(date);
+        });
+</script>
+</body>
+</html>
+

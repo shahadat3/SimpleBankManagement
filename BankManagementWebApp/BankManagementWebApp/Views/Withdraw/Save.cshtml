@@ -1,0 +1,93 @@
+﻿@{
+    ViewBag.Title = "Save";
+  
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+
+    <style>
+        .field-validation-error {
+            color: red;
+        }
+
+        body {
+            background-color: aquamarine;
+        }
+    </style>
+
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        <table>
+            <tr>
+                <td>
+                    @Html.Label("Ammount")
+                </td>
+                <td>
+                    @Html.TextBox("Ammount")
+                    @Html.ValidationMessage("Ammount")
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.Label("AccountId")
+                </td>
+                <td>
+                    @Html.TextBox("AccountId")
+                    @Html.ValidationMessage("AccountId")
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.Label("Date")
+                </td>
+                <td>
+                    @Html.TextBox("Date")
+                    @Html.ValidationMessage("Date")
+                </td>
+            </tr>
+            @*<tr>
+                    <td>
+                        @Html.Label("Balance")
+                    </td>
+                    <td>
+                        @Html.TextBox("Balance")
+                        @Html.ValidationMessage("Balance")
+                    </td>
+                </tr>*@
+            <tr>
+                <td></td>
+                <td>
+                    <button id="Withdraw">Withdraw</button>
+                </td>
+            </tr>
+        </table>
+    }
+    @if (ViewBag.Message != null)
+    {
+        <h3>@ViewBag.Message</h3>
+    }
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            var d = new Date();
+            var m = d.getMonth() + 1;
+            var date = d.getDate() + "-" + m + "-" + d.getFullYear();
+            //$("#Date").datepicker({
+            //    dateFormat: 'dd-mm-yy'
+            //});
+            $("#Date").val(date);
+        });
+    </script>
+</body>
+</html>
+

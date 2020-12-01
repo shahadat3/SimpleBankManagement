@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "Info";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style>
+
+        body {
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+@using (Html.BeginForm())
+        {
+            <table>
+                <tr>
+                    <td>
+                        @Html.Label("Account No")
+                    </td>
+                    <td>
+                        @Html.TextBox("AcNo")
+                        @Html.ValidationMessage("AcNo")
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="submit">Search</button>
+                    </td>
+                </tr>
+            </table>
+        }
+@if (ViewBag.Message != null)
+{
+    <h3>@ViewBag.Message</h3>
+}
+</body>
+</html>
+

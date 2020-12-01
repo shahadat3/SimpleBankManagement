@@ -1,0 +1,77 @@
+﻿@using BankManagementWebApp.Models
+@model IEnumerable<BankManagementWebApp.Models.Account>
+@{
+    ViewBag.Title = "Search";
+    
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        table, th, td {
+            border: 2px solid black;
+        }
+
+        body {
+            background-color: aquamarine;
+        }
+    </style>
+
+</head>
+<body>
+
+@*@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            <td>
+                @Html.Label("AcNo")
+            </td>
+            <td>
+                @Html.TextBox("AcNo")
+                @Html.ValidationMessage("AcNo")
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit">Search</button>
+            </td>
+        </tr>
+    </table>
+}*@
+<table>
+    <thead>
+
+    <tr>
+        <td>Name</td>
+        &nbsp;
+        <td>Account No</td>
+        &nbsp;
+        <td>Address</td>
+        &nbsp;
+        <td>Contact No</td>
+        &nbsp;
+        <td>Balance</td>
+    </tr>
+    </thead>
+<tbody>
+@foreach (Account account in Model)
+{
+    <tr>
+        <td>@account.Name</td>
+        <td>@account.AcNo</td>
+        <td>@account.Address</td>
+        <td>@account.ContactNo</td>
+        <td>@account.Balance</td>
+
+
+    </tr>
+}
+</tbody>
+</table>
+
+</body>
+</html>
